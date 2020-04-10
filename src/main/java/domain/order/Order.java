@@ -1,6 +1,9 @@
-package domain;
+package domain.order;
 
 import java.util.Objects;
+
+import domain.menu.Menu;
+import domain.menu.MenuRepository;
 
 public class Order {
     private final Menu menu;

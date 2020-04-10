@@ -1,8 +1,11 @@
-package domain;
+package domain.order;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import domain.discount.Discount;
+import domain.menu.Menu;
 
 public class Orders {
     private Map<Menu, Order> orders;

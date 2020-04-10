@@ -1,4 +1,4 @@
-package domain;
+package domain.payment;
 
 public class CreditCardPayment implements Payment {
     @Override

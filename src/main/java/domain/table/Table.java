@@ -1,6 +1,11 @@
-package domain;
+package domain.table;
 
 import java.util.Collection;
+
+import domain.discount.Discount;
+import domain.order.Order;
+import domain.order.Orders;
+import domain.payment.Payment;
 
 public class Table {
     private final int number;

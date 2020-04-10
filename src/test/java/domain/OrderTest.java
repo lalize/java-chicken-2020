@@ -5,13 +5,15 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.order.Order;
+import domain.order.Quantity;
+
 public class OrderTest {
     @Test
     @DisplayName("메뉴 번호와 수량을 입력받으면 주문 객체를 생성")
     void of() {
         assertThat(Order.of(1, 10)).isInstanceOf(Order.class);
     }
-
 
     @Test
     @DisplayName("같은 주문인지 확인")

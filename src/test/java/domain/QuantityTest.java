@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.order.Quantity;
+
 public class QuantityTest {
     @Test
     @DisplayName("수량 정수 입력 생성")

@@ -1,4 +1,6 @@
-package domain;
+package domain.discount;
+
+import domain.order.Order;
 
 public class ChickenDiscount implements Discount {
     private static final double PRICE = 10000;

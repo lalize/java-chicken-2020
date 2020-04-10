@@ -5,6 +5,12 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.discount.ChickenDiscount;
+import domain.order.Order;
+import domain.payment.CashPayment;
+import domain.payment.CreditCardPayment;
+import domain.table.Table;
+
 public class TableTest {
     @Test
     @DisplayName("테이블 번호 같은지 확인")

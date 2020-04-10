@@ -13,8 +13,19 @@ public class InputView {
         System.out.println("##원하는기능을선택하세요");
         return scanner.nextInt();
     }
+
     public static int inputTableNumber() {
         System.out.println("## 주문할 테이블을 선택하세요.");
+        return scanner.nextInt();
+    }
+
+    public static int inputMenuNumber() {
+        System.out.println("##등록할메뉴를선택하세요.");
+        return scanner.nextInt();
+    }
+
+    public static int inputQuantityOfMenu() {
+        System.out.println("##메뉴의수량을입력하세요. ");
         return scanner.nextInt();
     }
 }

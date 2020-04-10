@@ -5,6 +5,10 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.order.Order;
+import domain.payment.CreditCardPayment;
+import domain.payment.Payment;
+
 public class CreditCardPaymentTest {
     @Test
     @DisplayName("신용 카드 결제 확인")

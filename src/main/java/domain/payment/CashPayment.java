@@ -1,4 +1,4 @@
-package domain;
+package domain.payment;
 
 public class CashPayment implements Payment {
     private static final double DISCOUNT_RATE = 0.95;
