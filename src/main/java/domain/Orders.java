@@ -23,4 +23,8 @@ public class Orders {
     public Map<Menu, Quantity> values() {
         return Collections.unmodifiableMap(orders);
     }
+
+    public int size() {
+        return orders.size();
+    }
 }
