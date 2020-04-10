@@ -44,4 +44,8 @@ public class Order {
     public int price() {
         return menu.getPrice() * quantity.getValue();
     }
+
+    public Order addQuantity(Quantity quantity) {
+        return new Order(menu, this.quantity.add(quantity));
+    }
 }

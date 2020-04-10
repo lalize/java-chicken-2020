@@ -32,6 +32,14 @@ public class OrdersTest {
     void add_same_menu() {
         orders.add(Order.of(2, 10));
         orders.add(Order.of(2, 10));
-        assertThat(orders.values().get(MenuRepository.findByNumber(2))).isEqualTo(Quantity.from(20));
+        assertThat(orders.values().get(MenuRepository.findByNumber(2))).isEqualTo(Order.of(2, 20));
+    }
+
+    @Test
+    @DisplayName("치킨 할인 적용한 주문 금액 확인")
+    void price() {
+        orders.add(Order.of(1, 10));
+        orders.add(Order.of(22, 10));
+        assertThat(orders.price(new ChickenDiscount())).isEqualTo(160000);
     }
 }

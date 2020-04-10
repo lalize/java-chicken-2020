@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Orders {
-    private Map<Menu, Quantity> orders;
+    private Map<Menu, Order> orders;
 
-    private Orders(Map<Menu, Quantity> orders) {
+    private Orders(Map<Menu, Order> orders) {
         this.orders = orders;
     }
 
@@ -15,16 +15,23 @@ public class Orders {
         return new Orders(new LinkedHashMap<>());
     }
 
-    public void add(Order order) {
-        orders.computeIfPresent(order.getMenu(), (menu, quantity) -> quantity.add(order.getQuantity()));
-        orders.putIfAbsent(order.getMenu(), order.getQuantity());
+    public void add(Order newOrder) {
+        orders.computeIfPresent(newOrder.getMenu(), (menu, order) -> order.addQuantity(newOrder.getQuantity()));
+        orders.putIfAbsent(newOrder.getMenu(), newOrder);
     }
 
-    public Map<Menu, Quantity> values() {
+    public Map<Menu, Order> values() {
         return Collections.unmodifiableMap(orders);
     }
 
     public int size() {
         return orders.size();
+    }
+
+    public double price(Discount discount) {
+        return orders.values()
+                .stream()
+                .mapToDouble(discount::discount)
+                .sum();
     }
 }
