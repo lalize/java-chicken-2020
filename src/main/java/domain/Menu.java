@@ -47,4 +47,8 @@ public class Menu {
     public int hashCode() {
         return Objects.hash(number, name, category, price);
     }
+
+    public boolean isChicken() {
+        return category.isChicken();
+    }
 }
