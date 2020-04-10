@@ -9,13 +9,13 @@ public class OutputView {
     private static final String TOP_LINE = "┌ ─ ┐";
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
+    private static final String BOTTOM_LINE_ORDERED = "└ W ┘";
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
-        final int size = tables.size();
-        printLine(TOP_LINE, size);
+        printLine(TOP_LINE, tables.size());
         printTableNumbers(tables);
-        printLine(BOTTOM_LINE, size);
+        printTableBottoms(tables);
     }
 
     public static void printMenus(final List<Menu> menus) {
@@ -36,5 +36,20 @@ public class OutputView {
             System.out.printf(TABLE_FORMAT, table);
         }
         System.out.println();
+    }
+
+    private static void printTableBottoms(final List<Table> tables) {
+        for (final Table table : tables) {
+            printTableBottom(table);
+        }
+        System.out.println();
+    }
+
+    private static void printTableBottom(Table table) {
+        if (table.hasOrder()) {
+            System.out.printf(BOTTOM_LINE_ORDERED);
+            return;
+        }
+        System.out.printf(BOTTOM_LINE);
     }
 }

@@ -37,4 +37,8 @@ public class Orders {
                 .mapToDouble(discount::discount)
                 .sum();
     }
+
+    public boolean isNotEmpty() {
+        return !orders.isEmpty();
+    }
 }

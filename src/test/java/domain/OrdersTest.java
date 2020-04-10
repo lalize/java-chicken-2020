@@ -47,4 +47,11 @@ public class OrdersTest {
         orders.add(Order.of(22, 10));
         assertThat(orders.price(new ChickenDiscount())).isEqualTo(160000);
     }
+
+    @Test
+    @DisplayName("주문이 존재하는지 확인")
+    void isNotEmpty() {
+        orders.add(Order.of(1, 10));
+        assertThat(orders.isNotEmpty()).isTrue();
+    }
 }

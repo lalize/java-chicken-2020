@@ -41,4 +41,8 @@ public class Table {
         return orders.values()
                 .values();
     }
+
+    public boolean hasOrder() {
+        return orders.isNotEmpty();
+    }
 }
