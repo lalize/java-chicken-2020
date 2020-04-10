@@ -40,4 +40,8 @@ public class Order {
     public int hashCode() {
         return Objects.hash(menu, quantity);
     }
+
+    public int price() {
+        return menu.getPrice() * quantity.getValue();
+    }
 }

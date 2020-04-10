@@ -35,6 +35,10 @@ public class Quantity {
         return from(this.quantity + quantity);
     }
 
+    public int getValue() {
+        return quantity;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
