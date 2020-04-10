@@ -54,4 +54,12 @@ public class OrdersTest {
         orders.add(Order.of(1, 10));
         assertThat(orders.isNotEmpty()).isTrue();
     }
+
+    @Test
+    @DisplayName("주문을 비우는지 확인")
+    void clear() {
+        orders.add(Order.of(1, 10));
+        orders.clear();
+        assertThat(orders.isNotEmpty()).isFalse();
+    }
 }

@@ -1,8 +1,10 @@
 package view;
 
+import java.util.Collection;
 import java.util.List;
 
 import domain.menu.Menu;
+import domain.order.Order;
 import domain.table.Table;
 
 public class OutputView {
@@ -47,9 +49,22 @@ public class OutputView {
 
     private static void printTableBottom(Table table) {
         if (table.hasOrder()) {
-            System.out.printf(BOTTOM_LINE_ORDERED);
+            System.out.print(BOTTOM_LINE_ORDERED);
             return;
         }
-        System.out.printf(BOTTOM_LINE);
+        System.out.print(BOTTOM_LINE);
+    }
+
+    public static void printOrders(Collection<Order> ordersByTableNumber) {
+        System.out.println("## 주문 내역");
+        System.out.println("메뉴 수량 금액");
+        ordersByTableNumber.forEach(order -> {
+            System.out.println(order.getMenu().getName() + " " + order.getQuantity().getValue() + " " + order.price());
+        });
+    }
+
+    public static void printPrice(double price) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(price + "원");
     }
 }

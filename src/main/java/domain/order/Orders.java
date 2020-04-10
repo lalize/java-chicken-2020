@@ -27,10 +27,6 @@ public class Orders {
         return Collections.unmodifiableMap(orders);
     }
 
-    public int size() {
-        return orders.size();
-    }
-
     public double price(Discount discount) {
         return orders.values()
                 .stream()
@@ -40,5 +36,9 @@ public class Orders {
 
     public boolean isNotEmpty() {
         return !orders.isEmpty();
+    }
+
+    public void clear() {
+        orders.clear();
     }
 }

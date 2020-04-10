@@ -30,11 +30,13 @@ public class Table {
     }
 
     public double payment(Payment payment, Discount discount) {
-        return orders()
+        final double price = orders()
                 .stream()
                 .mapToDouble(discount::discount)
                 .map(payment::payment)
                 .sum();
+        orders.clear();
+        return price;
     }
 
     public Collection<Order> orders() {

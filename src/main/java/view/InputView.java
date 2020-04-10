@@ -6,11 +6,11 @@ public class InputView {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static int inputServiceNumber() {
-        System.out.println("##메인화면");
-        System.out.println("1-주문등록");
-        System.out.println("2-결제하기");
-        System.out.println("3-프로그램종료\n");
-        System.out.println("##원하는기능을선택하세요");
+        System.out.println("## 메인화면");
+        System.out.println("1 - 주문등록");
+        System.out.println("2 - 결제하기");
+        System.out.println("3 - 프로그램종료\n");
+        System.out.println("## 원하는 기능을 선택하세요.");
         return scanner.nextInt();
     }
 
@@ -20,12 +20,18 @@ public class InputView {
     }
 
     public static int inputMenuNumber() {
-        System.out.println("##등록할메뉴를선택하세요.");
+        System.out.println("## 등록할 메뉴를 선택하세요.");
         return scanner.nextInt();
     }
 
     public static int inputQuantityOfMenu() {
-        System.out.println("##메뉴의수량을입력하세요. ");
+        System.out.println("## 메뉴의 수량을 입력하세요.");
+        return scanner.nextInt();
+    }
+
+    public static int inputPaymentType() {
+        System.out.println("## 1번 테이블의 결제를 진행합니다.");
+        System.out.println("## 신용 카드는 1번,현금은 2번");
         return scanner.nextInt();
     }
 }

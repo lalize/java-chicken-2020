@@ -36,6 +36,12 @@ public class ChickenHouseController {
     }
 
     private void payment() {
+        OutputView.printTables(chickenHouseService.tables());
+        final int selectTableNumber = InputView.inputTableNumber();
+        OutputView.printOrders(chickenHouseService.findOrdersByTableNumber(selectTableNumber));
+        final int selectPaymentType = InputView.inputPaymentType();
+        final double price = chickenHouseService.payment(selectTableNumber, selectPaymentType);
+        OutputView.printPrice(price);
     }
 
     private void exit() {

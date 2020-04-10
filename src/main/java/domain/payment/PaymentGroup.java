@@ -14,14 +14,11 @@ public enum PaymentGroup {
         this.payment = payment;
     }
 
-    public static PaymentGroup from(int id) {
+    public static Payment get(int id) {
         return Arrays.stream(values())
                 .filter(payment -> payment.id == id)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 결제 방법입니다."));
-    }
-
-    public double payment(double price) {
-        return payment.payment(price);
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 결제 방법입니다."))
+                .payment;
     }
 }
