@@ -11,7 +11,7 @@ public class CashPaymentTest {
     void payment() {
         Payment cash = new CashPayment();
         Order order = Order.of(1, 10);
-        double price = order.getMenu().getPrice() * order.getQuantity().getValue() * 0.95;
-        assertThat(cash.payment(order)).isEqualTo(price);
+        double price = order.getMenu().getPrice() * order.getQuantity().getValue();
+        assertThat(cash.payment(price)).isEqualTo(price * 0.95);
     }
 }

@@ -17,6 +17,22 @@ public class TableTest {
     void addOrder() {
         Table table = new Table(1);
         table.addOrder(Order.of(1, 10));
-        assertThat(table.orderSize()).isEqualTo(1);
+        assertThat(table.orders().size()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("테이블 신용 카드 결제 금액 확인")
+    void payment_credit_card() {
+        Table table = new Table(1);
+        table.addOrder(Order.of(1, 10));
+        assertThat(table.payment(new CreditCardPayment(), new ChickenDiscount())).isEqualTo(150000);
+    }
+
+    @Test
+    @DisplayName("테이블 현금 결제 금액 확인")
+    void payment_cash() {
+        Table table = new Table(1);
+        table.addOrder(Order.of(1, 10));
+        assertThat(table.payment(new CashPayment(), new ChickenDiscount())).isEqualTo(142500);
     }
 }

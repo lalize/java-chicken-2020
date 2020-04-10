@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Collection;
+
 public class Table {
     private final int number;
     private final Orders orders;
@@ -22,7 +24,16 @@ public class Table {
         orders.add(order);
     }
 
-    public int orderSize() {
-        return orders.size();
+    public double payment(Payment payment, Discount discount) {
+        return orders()
+                .stream()
+                .mapToDouble(discount::discount)
+                .map(payment::payment)
+                .sum();
+    }
+
+    public Collection<Order> orders() {
+        return orders.values()
+                .values();
     }
 }

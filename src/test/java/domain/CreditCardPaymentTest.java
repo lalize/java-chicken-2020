@@ -12,6 +12,6 @@ public class CreditCardPaymentTest {
         Payment creditCard = new CreditCardPayment();
         Order order = Order.of(1, 10);
         double price = order.getMenu().getPrice() * order.getQuantity().getValue();
-        assertThat(creditCard.payment(order)).isEqualTo(price);
+        assertThat(creditCard.payment(price)).isEqualTo(price);
     }
 }
